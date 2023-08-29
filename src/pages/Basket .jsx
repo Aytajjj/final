@@ -112,7 +112,7 @@ const handleShow =() =>{
             <Button>Back</Button>
           </LinkContainer>
           {/* <LinkContainer to="/login"> */}
-            <Button onClick={handleShow}>Buy</Button>
+            <Button className="buy" onClick={handleShow}>Buy</Button>
           {/* </LinkContainer> */}
           <Modal
             show={show}

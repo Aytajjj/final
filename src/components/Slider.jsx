@@ -7,11 +7,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import "../sass/index.scss";
+import { useTranslation } from "react-i18next";
+import i18n from "../i18next/i18next";
+
 
 // import required modules
 
 
 const Slider = () => {
+   const { t } = useTranslation();
+   const handleClick = (lang) => {
+     i18n.changeLanguage(lang);
+     localStorage.setItem("DefaultLang", lang);
+   };
   return (
     <>
       <Swiper
@@ -24,7 +32,7 @@ const Slider = () => {
       >
         <SwiperSlide>
           <div className="subtitle" data-swiper-parallax="-200">
-            <p>Exotic and Delicious</p>
+            <p> {t("title.6")}</p>
           </div>
           <img
             src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/slider/1.jpg"
@@ -33,7 +41,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="subtitle" data-swiper-parallax="-200">
-            <p>Made with Love</p>
+            <p> {t("title.7")}</p>
           </div>
           <img
             src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/slider/2.jpg"
@@ -42,7 +50,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="subtitle" data-swiper-parallax="-200">
-            <p>Savor the Flavor</p>
+            <p> {t("title.8")}</p>
           </div>
           <img
             src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/slider/3.jpg"

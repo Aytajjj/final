@@ -2,53 +2,62 @@ import React, { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
+import { useTranslation } from "react-i18next";
+import i18n from "../i18next/i18next";
 
-const Rezerv = () => { useEffect(() => {
+
+const Rezerv = () => {
+     const { t } = useTranslation();
+     const handleClick = (lang) => {
+       i18n.changeLanguage(lang);
+       localStorage.setItem("DefaultLang", lang);
+     };
+   useEffect(() => {
+
 AOS.init();
  });
   return (
     <div>
-    
       <div className="Rezerv-table">
         <img
           src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/title_border.png"
           alt=""
         />
-        <h1>About Our Company</h1>
-        <p>Book a table in advance to enjoy your time with friends & Family</p>
+        <h1> {t("title.9")}</h1>
+        <p> {t("title.10")}</p>
         <form action="">
           <label htmlFor="Your Name">
-            Name: <br />
+            {t("title.11")} <br />
             <input type="text" placeholder="Ex . Jhon Doe" />
           </label>
           <label htmlFor="No. of Person">
-            No. of Person: <br />
+            {t("title.12")} <br />
             <input type="number" placeholder="No. of Person" />
           </label>
           <label htmlFor="Date">
-            Date: <br />
+            {t("title.13")} <br />
             <input type="date" />
           </label>
           <label htmlFor="Time">
-            Time: <br />
+            {t("title.14")} <br />
             <input type="time" />
           </label>
           <label htmlFor="">
-            <button>Reserv our Table</button>
+            <button> {t("title.15")}</button>
           </label>
         </form>
       </div>
       <div className="rezerv">
         <div className="text">
-          <h1>About Us</h1>
-          <p className="title">Hungrybuzz cooks food as a culnery Art</p>
+          <h1> {t("title.16")}</h1>
+          <p className="title"> {t("title.17")}t</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing tempor incididunt
             ut labore et dolore magna aliqua. Ut en ad minim veniam, quis
             nostrud exercitation ullamco lab aliquip ex ea commodo consequat.
             Penat.
           </p>
-          <button>Learn More</button>
+          <button> {t("title.18")}</button>
         </div>
         <img
           className="layer3"
@@ -94,14 +103,14 @@ AOS.init();
           data-aos-anchor-placement="top-center"
           className="text"
         >
-          <p>Watch Hungrybuzz</p>
+          <p> {t("title.19")}</p>
           <div className="video">
             <img
               src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/play_btn.png"
               alt=""
             />
           </div>
-          <p>Cooking Videos</p>
+          <p className="cooking"> {t("title.20")}</p>
         </div>
       </div>
     </div>

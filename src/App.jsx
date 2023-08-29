@@ -23,12 +23,20 @@ import Auth from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import EditBlog from "./pages/update/EditBlog";
 import CreateBlog from "./pages/update/CreateBlog";
+import { useSelector } from "react-redux";
+import Blogs from "./pages/Blogs";
 
 const App = () => {
   const [mode] = useContext(ThemeContext);
   useEffect(() => {
     document.querySelector("body").className = mode;
   });
+
+  const blogs = useSelector((a) => a);
+
+  useEffect(()=>{
+    localStorage.setItem('Blogs', JSON.stringify(blogs))
+  })
 
   return (
     <div className="app">
@@ -58,6 +66,7 @@ const App = () => {
               <Route path="/shop" element={<Shop />}></Route>
               <Route path="/product/:id" element={<ProductDetails />}></Route>
               <Route path="/basket" element={<Basket />}></Route>
+              <Route path="/blogs" element={<Blogs />}></Route>
               <Route path="/wishlist" element={<Wishlist />}></Route>
               <Route path="/dashboard" element={<Dashboard />}></Route>
               <Route path="/admin" element={<Auth />}></Route>

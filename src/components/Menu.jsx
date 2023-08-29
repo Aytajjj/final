@@ -1,8 +1,13 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
+import i18n from "../i18next/i18next";
 
 const Menu = ({product}) => {
-  
+      const { t } = useTranslation();
+      const handleClick = (lang) => {
+        i18n.changeLanguage(lang);
+        localStorage.setItem("DefaultLang", lang);
+      };
   return (
     <div>
       <div className="big-menu">
@@ -11,8 +16,8 @@ const Menu = ({product}) => {
             src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/title_border.png"
             alt=""
           />
-          <h1>Restaurant Menu</h1>
-          <p>Find your favourite meal from the delicious options we have</p>
+          <h1> {t("title.21")}</h1>
+          <p>{t("title.22")}</p>
         </div>
         <div className="icon-menu">
           <div className="icons">
@@ -82,45 +87,37 @@ const Menu = ({product}) => {
                   aria-labelledby="ex1-tab-1"
                 >
                   <div className="meal">
-                    <h1>Main meals</h1>
-                    <span>01. Beer-Cheeseburger </span>{" "}
+                    <h1>{t("title.23")}</h1>
+                    <span>01. {t("title.24")} </span>{" "}
                     <span className="span">
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 220 
-                    </span>
+                    <span className="price">$ 220</span>
                   </div>
                   <div className="meal">
-                    <span>02. One-Pot Beef with Broccoli </span>{" "}
+                    <span>02. {t("title.25")} </span>{" "}
                     <span className="span">
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 180 
-                    </span>
+                    <span className="price">$ 180</span>
                   </div>
                   <div className="meal">
-                    <span>03.Pesto Chicken Bake </span>{" "}
+                    <span>03.{t("title.26")} </span>{" "}
                     <span className="span">
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 110 
-                    </span>
+                    <span className="price">$ 110</span>
                   </div>
                   <div className="meal">
-                    <span>04. Lately deloicous Egs </span>{" "}
+                    <span>04. {t("title.27")} </span>{" "}
                     <span className="span">
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 150 
-                    </span>
+                    <span className="price">$ 150</span>
                   </div>
                 </div>
 
@@ -138,9 +135,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 150 
-                    </span>
+                    <span className="price">$ 150</span>
                   </div>
                   <div className="meal">
                     <span>02. Banana Nut Pancakes </span>{" "}
@@ -148,9 +143,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 180 
-                    </span>
+                    <span className="price">$ 180</span>
                   </div>
                   <div className="meal">
                     <span>03. Swiss Hash Browns </span>{" "}
@@ -158,9 +151,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 110 
-                    </span>
+                    <span className="price">$ 110</span>
                   </div>
                   <div className="meal">
                     <span>04. Perfect Scrambled Eggs </span>{" "}
@@ -168,9 +159,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 150 
-                    </span>
+                    <span className="price">$ 150</span>
                   </div>
                 </div>
                 <div
@@ -187,9 +176,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 20 
-                    </span>
+                    <span className="price">$ 20</span>
                   </div>
                   <div className="meal">
                     <span>02. Iced Latte </span>{" "}
@@ -197,9 +184,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 18 
-                    </span>
+                    <span className="price">$ 18</span>
                   </div>
                   <div className="meal">
                     <span>03.Limonatte </span>{" "}
@@ -207,9 +192,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 10 
-                    </span>
+                    <span className="price">$ 10</span>
                   </div>
                   <div className="meal">
                     <span>04. Charamel Machiatho</span>{" "}
@@ -217,9 +200,7 @@ const Menu = ({product}) => {
                       Lorem ipsum dolor sit amet consecturer duis
                     </span>
                     <span className="line"></span>
-                    <span className="price">
-                      $ 50 
-                    </span>
+                    <span className="price">$ 50</span>
                   </div>
                 </div>
               </div>
@@ -227,9 +208,7 @@ const Menu = ({product}) => {
             </div>
           </div>
         </div>
-       
       </div>
-      
     </div>
   );
 };

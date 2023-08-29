@@ -1,109 +1,108 @@
-import  { useState } from 'react';
-import { Row } from 'react-bootstrap';
-import SingleCard from '../components/SingleCard';
-import { ProductContext } from '../context/ProductContext';
-import { useContext } from 'react';
-
+import { useState } from "react";
+import { Row } from "react-bootstrap";
+import SingleCard from "../components/SingleCard";
+import { ProductContext } from "../context/ProductContext";
+import { useContext } from "react";
 
 const Filter = () => {
   const [market] = useContext(ProductContext);
 
-    const [meals, setMeals] = useState([
-      {
-        id: 1,
-        title: "Margarita",
-        categori: "Pizza",
-        photo:
-          "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-        price: "30",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: "2",
-        title: "Pepperoni",
-        categori: "Pizza",
-        photo:
-          "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-        price: "34",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 3,
-        title: "Vegeterian",
-        categori: "Pizza",
-        photo:
-          "https://media.istockphoto.com/id/1497887381/photo/family-enjoying-traditional-calabrian-pizza-for-lunch.webp?b=1&s=170667a&w=0&k=20&c=N2x-IiISZcxDYdJImtGb-5PPpaRMHaAAI4t-9ppJlm0=",
-        price: "45",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 6,
-        title: "summer salad",
-        categori: "salad",
+  const [meals, setMeals] = useState([
+    {
+      id: 1,
+      title: "Margarita",
+      categori: "Pizza",
+      photo:
+        "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      price: "30",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: "2",
+      title: "Pepperoni",
+      categori: "Pizza",
+      photo:
+        "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGl6emF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      price: "34",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 3,
+      title: "Vegeterian",
+      categori: "Pizza",
+      photo:
+        "https://media.istockphoto.com/id/1497887381/photo/family-enjoying-traditional-calabrian-pizza-for-lunch.webp?b=1&s=170667a&w=0&k=20&c=N2x-IiISZcxDYdJImtGb-5PPpaRMHaAAI4t-9ppJlm0=",
+      price: "45",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 6,
+      title: "summer salad",
+      categori: "salad",
 
-        photo:
-          "https://plus.unsplash.com/premium_photo-1673590981774-d9f534e0c617?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FsYWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-        price: "30",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 4,
-        title: "RED salad",
-        categori: "salad",
-        photo:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsYWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-        price: "34",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 5,
-        title: "Vegeterian",
-        categori: "salad",
-        photo:
-          "https://plus.unsplash.com/premium_photo-1671403964050-f7756da6c60b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNhbGFkfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-        price: "45",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 7,
-        title: "Steak and patato",
-        categori: "meal",
-        photo:
-          "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      photo:
+        "https://plus.unsplash.com/premium_photo-1673590981774-d9f534e0c617?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2FsYWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      price: "30",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 4,
+      title: "RED salad",
+      categori: "salad",
+      photo:
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FsYWR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      price: "34",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 5,
+      title: "Vegeterian",
+      categori: "salad",
+      photo:
+        "https://plus.unsplash.com/premium_photo-1671403964050-f7756da6c60b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNhbGFkfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      price: "45",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 7,
+      title: "Steak and patato",
+      categori: "meal",
+      photo:
+        "https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
 
-        price: "455",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 8,
-        title: "Red Valved",
-        categori: "meal",
-        photo:
-          "https://images.unsplash.com/photo-1633436375795-12b3b339712f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-        price: "220",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
-      {
-        id: 9,
-        title: "Makaronne",
-        categori: "pasta",
-        photo:
-          "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-        price: "120",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-      },
+      price: "455",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 8,
+      title: "Red Valved",
+      categori: "meal",
+      photo:
+        "https://images.unsplash.com/photo-1633436375795-12b3b339712f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHN0ZWFrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      price: "220",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
+    {
+      id: 9,
+      title: "Makaronne",
+      categori: "pasta",
+      photo:
+        "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGFzdGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      price: "120",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+    },
 
-      {
-        id: 10,
-        title: "Fettichune Alfredo",
-        categori: "pasta",
-        photo:
-          "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFzdGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-        desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
-        price: "45",
-      },
-    ]); // data.json 
-const [filteredMeals, setFilteredMeals] = useState([]);
+    {
+      id: 10,
+      title: "Fettichune Alfredo",
+      categori: "pasta",
+      photo:
+        "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFzdGF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut ab alias at temporibus maxime nostrum inventore totam. Quasi, maxime ratione!",
+      price: "45",
+    },
+  ]); // data.json
+  const [filteredMeals, setFilteredMeals] = useState([]);
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(500);
 
@@ -116,24 +115,37 @@ const [filteredMeals, setFilteredMeals] = useState([]);
   };
 
   const filterByPrice = () => {
-    const filteredMeals = meals.filter((meal) => meal.price >= minPrice && meal.price <= maxPrice);
+    const filteredMeals = meals.filter(
+      (meal) => meal.price >= minPrice && meal.price <= maxPrice
+    );
     setFilteredMeals(filteredMeals);
   };
 
- 
   return (
     <>
-    <div className='filterbuttons mt-3'>
-      <input type="number"  value={minPrice} onChange={handleMinPriceChange} />
-      <input type="number" value={maxPrice} onChange={handleMaxPriceChange} />
-      <button style={{backgroundColor:"black", fontSize:"16px", marginLeft:"1px"}} onClick={filterByPrice}><i style={{color:"whitesmoke" , backgroundColor:"rgb(1,1,65)" , fontSize:"15px",}} className="fa-solid fa-repeat"></i></button>
-    </div>
+      <div className="filterbuttons mt-3">
+        <input type="number" value={minPrice} onChange={handleMinPriceChange} />
+        <input type="number" value={maxPrice} onChange={handleMaxPriceChange} />
+        <button
+          style={{
+            backgroundColor: "black",
+            fontSize: "16px",
+            marginLeft: "1px",
+          }}
+          onClick={filterByPrice}
+        >
+          <i
+            style={{
+              color: "whitesmoke",
+              backgroundColor: "rgb(1,1,65)",
+              fontSize: "15px",
+            }}
+            className="fa-solid fa-repeat"
+          ></i>
+        </button>
+      </div>
 
-
-
-
-<div className="row g-0 mt-5">
-       
+      <div className="row g-0 mt-5">
         {filteredMeals.map((item) => {
           return (
             <>
@@ -154,12 +166,8 @@ const [filteredMeals, setFilteredMeals] = useState([]);
             </>
           );
         })}
-
-
-
-
       </div>
-      </>
+    </>
   );
 };
 

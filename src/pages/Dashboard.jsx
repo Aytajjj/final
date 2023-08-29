@@ -6,16 +6,19 @@ import { Table } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { removeBlog } from "../redux/action/Blogaction";
 import { ProductContext } from "../context/ProductContext";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Dashboard = () => {
   const blogs = useSelector((a) => a);
   const dispatch = useDispatch();
-const [product] = useContext(ProductContext)
-useEffect(()=>{
-  console.log(product);
-},[])
+  const [product] = useContext(ProductContext);
+  useEffect(() => {
+    console.log(product);
+  }, []);
   return (
     <div>
+      <Header />
       <h1 className="text-center my-5">Admin Panel</h1>
       <LinkContainer to="/dashboard/add">
         <Button variant="dark" className="mb-3">
@@ -34,7 +37,7 @@ useEffect(()=>{
           </tr>
         </thead>
         <tbody>
-          {product.map((item, c) => (
+          {blogs.map((item, c) => (
             <tr key={item.id}>
               <td>{c + 1}</td>
               <td>
@@ -64,6 +67,7 @@ useEffect(()=>{
         </tbody>
       </Table>
       <Button>Buy</Button>
+      <Footer />
     </div>
   );
 };

@@ -7,13 +7,15 @@ import { ThemeContext } from "../context/ThemeContext";
 import { useWishlist } from "react-use-wishlist";
 import { useTranslation } from "react-i18next";
 import LoginBtn from "./LoginBtn";
+import i18n from "../i18next/i18next";
 
 const Header = (product) => {
-    const { totalItems } = useCart();
-    const { i18n, t } = useTranslation();
-const handleClick = (lang) => {
-  i18n.changeLanguage(lang);
-};
+  const { totalItems } = useCart();
+  const { t } = useTranslation();
+  const handleClick = (lang) => {
+    i18n.changeLanguage(lang);
+    localStorage.setItem('DefaultLang', lang)
+  };
   const [mode, setMode] = useContext(ThemeContext);
   const { totalWishlistItems } = useWishlist();
   const scrollToTop = () => {
@@ -22,7 +24,6 @@ const handleClick = (lang) => {
       behavior: "smooth",
     });
   };
-
 
   return (
     <div>
@@ -43,7 +44,7 @@ const handleClick = (lang) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item">
                 <LinkContainer to="/basket">
-                  <Button variant="secondary">
+                  <Button className="btndesgn">
                     <i
                       style={{
                         color: "#d77647",
@@ -69,7 +70,7 @@ const handleClick = (lang) => {
                     window.scrollTo(0, 0);
                   }}
                 >
-                  <Button className="btn-wish">
+                  <Button className="btndesgn">
                     {totalWishlistItems / 2}
                     <i class="fa-solid fa-heart ms-1"></i>
                   </Button>
@@ -77,7 +78,7 @@ const handleClick = (lang) => {
 
                 <Button
                   variant={mode === "light" ? "light" : "warning"}
-                  className="ms-3 text-dark"
+                  className="ms-3 btndesgn text-dark"
                   onClick={() => {
                     mode === "light" ? setMode("dark") : setMode("light");
                     mode === "light"
@@ -95,12 +96,17 @@ const handleClick = (lang) => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link " to="/about">
-                  About
+                  {t("title.1")}
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link " to="/blogs">
+                  {t("title.2")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link " to="/menu">
-                  Menu
+                  {t("title.3")}
                 </Link>
               </li>{" "}
               <li className="nav-item">
@@ -111,24 +117,24 @@ const handleClick = (lang) => {
                 />
               </li>{" "}
               <li className="login nav-item">
-                <Link className="nav-link " to="/login">
+                <Link className="nav-link loginnn" to="/login">
                   <Nav.Link className="loginbtnm">
-                    <LoginBtn  />
+                    <LoginBtn />
                   </Nav.Link>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link " to="/shop">
-                  Shop
+                  {t("title.4")}
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link " to="/contact">
-                  Contact
+                  {t("title.5")}
                 </Link>
               </li>
             </ul>
-            <NavDropdown title={t("lang")} id="basic-nav-dropdown">
+            <NavDropdown title={i18n.language} id="basic-nav-dropdown">
               <NavDropdown.Item>
                 <Button
                   onClick={() => {

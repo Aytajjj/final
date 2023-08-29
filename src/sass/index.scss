@@ -12,8 +12,11 @@ html{width: 100%;
     
 }
         .icon {
-            color: #c19f5f;
+           color: #000;
             cursor: pointer;
+        }
+        i{
+            color: #000 !important;
         }
 body{
     width: 100%;
@@ -25,7 +28,7 @@ body{
     background-color: rgb(181, 161, 136) !important;
 color: #000 !important;
  transition: 1s;
-th,.form-label, tr,td a, p ,span ,.loginbtnm, .text-primary,.nav-link ,h1 ,li {
+th,.form-label,.cardbtn, tr,td a, p ,span ,.loginbtnm, .text-primary,.nav-link ,h1 ,li {
         color: #000 !important;
     }
         .big-menu{
@@ -42,11 +45,14 @@ th,.form-label, tr,td a, p ,span ,.loginbtnm, .text-primary,.nav-link ,h1 ,li {
 width: 300px;
 }
 
+.shop-head , .card-title{
+    font-family: "Cormorant Garamond", serif;
+}
 .dark {
  transition: 1s;
  color: #fff !important;
     background-color: #1f1917!important;
- .form-label, .loginbtnm , th ,tr, td{
+ .form-label, .loginbtnm ,.cardbtn, th ,tr, td{
  color: #fff !important;
     }
    
@@ -56,6 +62,27 @@ width: 300px;
 }
 .btn{
     color: #000;
+    background-color: #c19f5f;
+   
+    
+}
+.modal-body, .modal-footer{
+    color: #1f1917;
+}
+.btndesgn{
+    background-color: #c19f5f;
+    margin: 10px;
+}
+.cardbtn{
+    margin: 10px;
+}
+.dropdown-item{
+    color: #1f1917 !important;
+}
+.loginnn{ button{
+    background-color: #c9aa6f;
+}
+    
 }
 .lgn{
     transform: translateY(-30px);
@@ -786,10 +813,20 @@ justify-content: space-evenly;
     }
 }
 }
-
+.buy{
+    margin-left: 10px;
+}
 
 @media only screen and (max-width: 600px) {
-
+.fa-bars{
+    color: #c19f5f !important;
+}
+.video{
+    display: none !important;
+}
+.cooking{
+    margin: 5px;
+}
     .rezerv {
         position: relative;
         width: 100%;

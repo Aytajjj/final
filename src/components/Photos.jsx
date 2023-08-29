@@ -1,6 +1,12 @@
 import React from 'react'
-
+import { useTranslation } from "react-i18next";
+import i18n from "../i18next/i18next";
 const Photos = () => {
+      const { t } = useTranslation();
+      const handleClick = (lang) => {
+        i18n.changeLanguage(lang);
+        localStorage.setItem("DefaultLang", lang);
+      };
   return (
     <div className="photos-main">
       <img
@@ -8,7 +14,7 @@ const Photos = () => {
         src="https://wpthemebooster.com/demo/themeforest/html/hungrybuzz/assets/images/title_back.png"
         alt=""
       />{" "}
-      <h1>Photo Gallery</h1>
+      <h1>{t("title.35")}</h1>
       <div className="photos">
         <div data-aos="fade-down" className=" ph-1 photo-card">
           <div className="text">
